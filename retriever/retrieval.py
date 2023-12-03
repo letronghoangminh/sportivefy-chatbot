@@ -46,11 +46,11 @@ class Retriever:
       try:
         response = self.vector_store_retriever.get_relevant_documents(query)
         retriever_flag = True
-        result = []
         if len(list(response)) == 0:
           retriever_flag = False
         
         if retriever_flag:
+          result = []
           for document in list(response):
             post_id = document.metadata['post_id']
             author = document.metadata['author']
