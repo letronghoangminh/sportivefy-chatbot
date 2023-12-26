@@ -42,4 +42,3 @@ class JsonImporter:
             count += 1
           except:
             continue
-          self.add_new_documents(texts=text_batch, metadatas=metadata_batch)
