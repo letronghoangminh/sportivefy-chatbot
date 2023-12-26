@@ -2,7 +2,7 @@ from pydantic import BaseModel
 
 class Document(BaseModel):
     author: str = None
-    content: str = None
+    body: str = None
     title: str = None
-    post_id: int = None
+    slug: str = None
     sport_type: str = None

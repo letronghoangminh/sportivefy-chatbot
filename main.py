@@ -20,5 +20,5 @@ async def create(document: Optional[Document]):
     if not isinstance(document, Document):
       raise ValueError('Invalid document')
 
-    controller.embed_document([document.title + ' ' + document.content], metadatas=[{'author': document.author, 'title': document.title, 'post_id': document.post_id, 'sport_type': document.sport_type}])
+    controller.embed_document([document.title + ' ' + document.body], metadatas=[{'author': document.author, 'title': document.title, 'slug': document.post_id, 'sport_type': document.sport_type}])
     return {"message": "Document created"}

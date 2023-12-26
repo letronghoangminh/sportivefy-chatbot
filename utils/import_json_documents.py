@@ -33,8 +33,8 @@ class JsonImporter:
           try:
             print(f'Processing document number {count}')
             if len(text_batch) < 100:
-              text_batch.append(document['title'] + '. ' + document['article'])
-              metadata_batch.append({'post_id': document['_id']['$oid'],'author': document.get('author', 'Le Trong Hoang Minh'), 'title': document['title']})
+              text_batch.append(document['title'] + '. ' + document['body'])
+              metadata_batch.append({'slug': document['slug'],'author': document.get('author', 'Le Trong Hoang Minh'), 'title': document['title']})
             else: 
               self.add_new_documents(texts=text_batch, metadatas=metadata_batch)
               text_batch = []

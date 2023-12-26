@@ -52,10 +52,9 @@ class Retriever:
         if retriever_flag:
           result = []
           for document in list(response):
-            post_id = document.metadata['post_id']
-            author = document.metadata['author']
+            slug = document.metadata['slug']
             title = document.metadata['title']
-            result.append(f'Bài báo liên quan được viết bởi tác giả {author} với tiêu đề "{title}": {cfg.WEB_BASE_URL}/post/{post_id}')
+            result.append(f'Bài báo liên quan với tiêu đề "{title}": {cfg.WEB_BASE_URL}/posts/{slug}')
         else:
           response = self.runnable.invoke({'question': query})
           result = response
